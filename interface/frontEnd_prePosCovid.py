@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 def questionSemesterBoxPlot(question, semester):
     endPoint = back.basicStatistic(question, semester)
     plt.boxplot(endPoint[0], labels=[semester])
-    # Add title and labels
     plt.title(f"Question: {question}")
     plt.ylabel('Grades')
     plt.show()

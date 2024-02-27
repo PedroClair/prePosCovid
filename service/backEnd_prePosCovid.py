@@ -1,11 +1,8 @@
 import numpy as np
-import dataBase.dataBase_prePosCovid as set
+import dataBase.dataBase_prePosCovid as sql
 
 def basicStatistic(id_questionFK, semesterFK):
-    cursor = set.db.cursor()
-    sql = f"SELECT * FROM todo where id_questionFK = {id_questionFK} AND semesterFK = '{semesterFK}'"
-    cursor.execute(sql)
-    results = cursor.fetchall()
+    results = sql.searchQuestionSemester(id_questionFK, semesterFK)
     if(results):
         gradesInValues = [float(x) for x in results[0][0].split(',')]
         grades = np.array(gradesInValues)
@@ -20,10 +17,7 @@ def basicStatistic(id_questionFK, semesterFK):
         return [], 0, 0, 0, 0, 0, 0
 
 def questionAlongSemesters(id_questionFK):
-    cursor = set.db.cursor()
-    sql = f"SELECT * FROM todo where id_questionFK = {id_questionFK}"
-    cursor.execute(sql)
-    results = cursor.fetchall()
+    results = sql.searchQuestion(id_questionFK)
     list_of_grades = []
     list_of_semesters = []
     for result in results:
