@@ -1,5 +1,5 @@
 import numpy as np
-import dataBase_prePosCovid as set
+import dataBase.dataBase_prePosCovid as set
 
 def basicStatistic(id_questionFK, semesterFK):
     cursor = set.db.cursor()
@@ -32,6 +32,3 @@ def questionAlongSemesters(id_questionFK):
         list_of_semesters.append(result[1])
         list_of_grades.append(grades)
     return list_of_grades, list_of_semesters
-
-#print(basicStatistic(6, '2019-2'))
-print(questionAlongSemesters(6))

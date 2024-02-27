@@ -1,4 +1,4 @@
-import backEnd_prePosCovid as back
+import service.backEnd_prePosCovid as back
 import matplotlib.pyplot as plt
 
 def questionSemesterBoxPlot(question, semester):
@@ -17,5 +17,3 @@ def questionSemester(question):
     plt.show()
 
 
-#questionSemesterBoxPlot(6, '2019-2')
-questionSemester(6)
