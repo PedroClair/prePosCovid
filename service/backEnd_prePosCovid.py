@@ -1,5 +1,5 @@
 import numpy as np
-import dataBase.dataBase_prePosCovid as sql
+import dataBase.connect as sql
 
 def basicStatistic(id_questionFK, semesterFK):
     results = sql.searchQuestionSemester(id_questionFK, semesterFK)
