@@ -1,4 +1,4 @@
-import service.backEnd_prePosCovid as back
+import service.statistic as back
 import matplotlib.pyplot as plt
 
 def questionSemesterBoxPlot(question, semester):

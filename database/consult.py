@@ -1,4 +1,4 @@
-from dataBase.connect import *
+from database.connect import *
 
 def searchQuestionSemester(id_question, semester):
     cursor = db.cursor()

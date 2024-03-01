@@ -1,5 +1,5 @@
 import numpy as np
-import dataBase.connect as sql
+import database.consult as sql
 
 def basicStatistic(id_questionFK, semesterFK):
     results = sql.searchQuestionSemester(id_questionFK, semesterFK)
