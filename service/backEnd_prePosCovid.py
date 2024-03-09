@@ -22,7 +22,7 @@ def questionAlongSemesters(id_questionFK):
     list_of_semesters = []
     for result in results:
         gradesInValues = [float(x) for x in result[0].split(',')]
-        grades = np.array(gradesInValues) #Elimite empty values.
+        grades = np.array(gradesInValues) #Eliminate empty values.
         list_of_semesters.append(result[1])
         list_of_grades.append(grades)
     return list_of_grades, list_of_semesters
