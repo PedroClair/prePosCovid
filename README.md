@@ -11,8 +11,7 @@ After cloning the repository and enter the main folder, start an enviroment with
       USER = "root"
       PASSWORD = "ibd2024"
 - .\envPrePosCovid\Scripts\activate
- - To activate the python's enviroment
-
-# Credentials and Requirements
-- Acess the doc folder
-- pip install -r requirements.txt
+	- To activate the python's enviroment
+- pip install -r doc/requirements.txt
+  - Install the libraries
+- Into a MySQL execute the file database/sql/createSquema.sql to start a preposcovid database
