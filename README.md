@@ -6,7 +6,7 @@ After cloning the repository and enter the main folder, start an enviroment with
 - python -m venv envPrePosCovid
   - This step create an envpreposcovid folder
   - Into this folder create a private.py with your MySQL connecting credentials
-    - For example:
+    - For example: <br>
       HOST = "localhost" <br>
       USER = "root" <br>
       PASSWORD = "ibd2024" <br>
