@@ -17,3 +17,5 @@ After cloning the repository and enter the main folder, start an enviroment with
 - Into a MySQL execute the file database/sql/createSquema.sql to start a preposcovid database
 - Finally execute the app:
   - python app.py
+
+# Application

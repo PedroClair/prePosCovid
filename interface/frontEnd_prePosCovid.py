@@ -15,3 +15,5 @@ def questionSemester(question):
 	plt.ylabel('Grades')
 	plt.show()
 
+def generalComparation():
+	BE.generalComparation()
