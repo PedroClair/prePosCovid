@@ -12,9 +12,11 @@ def basicStatistic(id_questionFK, semesterFK):
 		median = np.percentile(grades, 50)
 		q3 = np.percentile(grades, 75)
 		iqr = q3 - q1
+		#print (grades, mean, std_dev, q1, median, q3, iqr) -> Show function result for analyses
 		return grades, mean, std_dev, q1, median, q3, iqr
 	else:
-			return [], 0, 0, 0, 0, 0, 0
+		#print ([], 0, 0, 0, 0, 0, 0) -> Show function result for analyses
+		return [], 0, 0, 0, 0, 0, 0
 
 def questionAlongSemesters(id_questionFK):
 	results = sql.searchQuestion(id_questionFK)

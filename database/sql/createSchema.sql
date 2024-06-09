@@ -1,18 +1,18 @@
 CREATE SCHEMA PREPOSCOVID;
 
 CREATE TABLE PREPOSCOVID.QUESTION (
-	  id_question INT NOT NULL,
-	  topic TEXT,
-	  dificult VARCHAR(45),
-	  multiple_choice bool,
-	  PRIMARY KEY (id_question)
+	id_question INT NOT NULL,
+	topic TEXT,
+	dificult VARCHAR(45),
+	multiple_choice bool,
+	PRIMARY KEY (id_question)
 );
 
 CREATE TABLE PREPOSCOVID.CLASS (
-	  semester VARCHAR(10) NOT NULL,
-	  students_number int,
-	  frequency int,
-	  PRIMARY KEY (semester)
+	semester VARCHAR(10) NOT NULL,
+	students_number int,
+	frequency int,
+	PRIMARY KEY (semester)
 );
 
 CREATE TABLE PREPOSCOVID.TODO (
