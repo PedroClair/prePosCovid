@@ -1,17 +1,20 @@
 # import seaborn library 
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
   
 # load the dataset 
-data = sns.load_dataset('tips') 
+data = sns.load_dataset('tips')
+
+data2 = pd.read_csv('csvToCompareStudentPerformance.csv')
   
 # view the dataset 
-print(data.head(5))
+print(data2.head(5))
 
 # create grouped boxplot  
-sns.boxplot(x = data['day'], 
-            y = data['total_bill'], 
-            hue = data['sex'])
+sns.boxplot(x = data2['Question'], 
+            y = data2['Grade'], 
+            hue = data2['Semester'])
 
 plt.show()
 
