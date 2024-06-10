@@ -3,21 +3,21 @@
 Several pandemics have occurred in human history and affected the human life, such as education and economy. The COVID-19 pandemic has had an unprecedented and widespread impact on education, significantly affecting students worldwide. Thus, the aim of this study is to evaluate the impact of the pandemic on student performance, especially in the Software Engineering discipline. We collected historical data from Software Engineering students over the last five years, such as their grades in a set of repeated questions throughout the semesters. As one of our results, we identified that the pandemic negatively influenced student performance in 2022, especially in the first semester. However, we also observed that the impact was mitigated in the following semesters.
 
 # GitHub Project
-This GitHub project is a Python language with a five-layer architecture implementation and MySQL connection. The database model used is explained in Elmashi and Navathe's book, "Introduction to Database Fundamentals, 7th edition." The goal of this job is show our data and analysis. You can reply or understand our research following or reading the next steps.
+This GitHub project is a Python language with a five-layer architecture implementation and MySQL connection. The database model used is explained in Elmashi and Navathe's book, "Introduction to Database Fundamentals, 7th edition." The goal of this job is to show our data and analysis. You can respond to or comprehend our research by following or reading the next steps.
 
 ## Start environment
-After cloning the repository and entering the main folder, start an environment with Python 3.12.3 installed and execute the following steps:
+After cloning the repository and navigating to the main folder, set up a Python 3.12.3 environment and follow these steps:
 1. Creates an envpreposcovid folder
 ```bash
 python -m venv envPrePosCovid
 ```
-2. Into envpreposcovid folder create a private.py with your MySQL connecting credentials, for example:
+2. Create a file named private.py inside the envpreposcovid folder and add your MySQL connection credentials.
 ```bash
 HOST = "localhost"
 USER = "root"
 PASSWORD = "ibd2024"
 ```
-3. Activat the python's environment
+3. Activate the Python environment
 ```bash
 .\envPrePosCovid\Scripts\activate
 ```
@@ -25,15 +25,15 @@ PASSWORD = "ibd2024"
 ```bash
 pip install -r doc/requirements.txt
 ```
-5. Into a MySQL execute the file database/sql/createSquema.sql to start a preposcovid database
+5. In MySQL, execute the file database/sql/createSchema.sql to initialize a preposcovid database.
 
-6. Finally execute the app:
+6. Finally, execute the app:
 ```bash
 python app.py
 ```
 
 ## Application
-When execute the aplication a menu appear with the following options:
+When the application is executed, a menu appears with the following options:
 
 ```bash
 ---------------------Welcome--------------------------------
@@ -44,11 +44,11 @@ When execute the aplication a menu appear with the following options:
 ---------------------Student Performance---------------------
 ```
 
-The question six and class 2019-2 were used to genearate a boxplot with student performance performance. 
+The question six and class 2019-2 were used to genearate a boxplot with student performance. 
 
 The statement of question 6 was ...
 
-The funtionalite number 1 is from the tuple bellow with an array of 36 student's grade.
+Functionality number 1 is from the tuple below with an array of 36 student's grades.
 ```
 (	
   Question = 6,
@@ -60,9 +60,11 @@ And the boxplot result was:
 
 ![Example boxplot question and class](doc/figure/boxPlotQ6C2019-2.png)
 
-To have a vision along the time the functionalite 2 performance of the students in all semester that the question was applied. 
+In the functionality 2 has a clear vision of the performance of students in all semesters, because the question was applied over time. The Figure below shows the result.
 
 ![Example boxplot question in all classes](doc/figure/boxPlotQ6AllSemesters.png)
+
+The functionality 3 shows a comparison between common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
 
 ![Example boxplot question in all classes](doc/figure/questionComparation2019_2022-1.png)
 
