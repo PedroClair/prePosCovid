@@ -36,7 +36,7 @@ python app.py
 When the application is executed, a menu appears with the following options:
 
 ```bash
----------------------Welcome--------------------------------
+---------------------Functionalities--------------------------------
 1. Example boxplot question and class: (question=6, class='2019-2')
 2. Example boxplot question in all classes: (question=6)
 3. Figure 2: Common questions analyzed during the semesters in 2019 (prepandemic) and 2022-1 (post-pandemic)
@@ -58,13 +58,15 @@ Functionality number 1 is from the tuple below with an array of 36 student's gra
 ```
 And the boxplot result was:
 
+And the boxplot result was:
+
 ![Example boxplot question and class](doc/figure/boxPlotQ6C2019-2.png)
 
-In the functionality 2 has a clear vision of the performance of students in all semesters, because the question was applied over time. The Figure below shows the result.
+Functionality 2 clearly defines students' performance in all semesters because the question was applied over time. The Figure below shows the result.
 
 ![Example boxplot question in all classes](doc/figure/boxPlotQ6AllSemesters.png)
 
-The functionality 3 shows a comparison between common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
+Functionality 3 compares common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
 
 ![Example boxplot question in all classes](doc/figure/questionComparation2019_2022-1.png)
 
