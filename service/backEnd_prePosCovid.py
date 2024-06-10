@@ -7,17 +7,17 @@ def findQuestion(question):
 	sql = f"SELECT semesterFK FROM todo where id_questionFK = {question}"
 	DB.cursor.execute(sql)
 	result = DB.cursor.fetchall()
-	print(question, result) #-> Show on BackEnd to verify function result
+	#print(question, result) #-> Show on BackEnd to verify function result
 	return result
 
-def firstSemester(semester):
+def firstSemester(question, semester):
 	grades2019 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = '{semester}';"
 	DB.cursor.execute(grades2019)
 	resultGrades2019 = DB.cursor.fetchall()[0][0] #-> First tuple and first column
 	#print("Grades by question: ", question, resultGrades2019) #-> Show on BackEnd to verify function result
 	return resultGrades2019
 
-def secondSemester(semester):
+def secondSemester(question, semester):
 	grades2022 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = '{semester}';"
 	DB.cursor.execute(grades2022)
 	resultGrades2022 = DB.cursor.fetchall()[0][0] #-> First tuple and first column
@@ -58,13 +58,13 @@ def generateCsvToComparationPrePosPandemic():
 	for question in commonQuestions:
 		questionBySemesters = findQuestion(question)
 		semesters = [x[0] for x in questionBySemesters]
-		grades1 = firstSemester(semesters[0])
+		grades1 = firstSemester(question, semesters[0])
 		gradesValues = [float(x) for x in grades1.split(',')]
 		print(question, semesters[0], gradesValues)
 		for grade in gradesValues:
 			rows.append([question, '2019', grade])
 
-		grades2 = secondSemester(semesters[1])
+		grades2 = secondSemester(question, semesters[1])
 		gradesValues2 = [float(x) for x in grades2.split(',')]
 		print(question, semesters[1], gradesValues)
 		for grade2 in gradesValues2:
