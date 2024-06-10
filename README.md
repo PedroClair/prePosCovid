@@ -60,5 +60,10 @@ And the boxplot result was:
 
 ![Example boxplot question and class](doc/figure/boxPlotQ6C2019-2.png)
 
+To have a vision along the time the functionalite 2 performance of the students in all semester that the question was applied. 
+
+![Example boxplot question in all classes](doc/figure/boxPlotQ6AllSemesters.png)
+
+![Example boxplot question in all classes](doc/figure/questionComparation2019_2022-1.png)
 
 
