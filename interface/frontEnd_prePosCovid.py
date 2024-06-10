@@ -1,5 +1,16 @@
 import service.backEnd_prePosCovid as BE
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+def showBoxplotComparationPrePosPandemic():
+	data = pd.read_csv('doc/file/csvToCompareStudentPerformance.csv')
+	# create grouped boxplot  
+	sns.boxplot (	x = data['Question'], 
+								y = data['Grade'], 
+								hue = data['Semester']
+							)
+	plt.show()
 
 def questionSemesterBoxPlot(question, semester):
 	endPoint = BE.basicStatistic(question, semester)
