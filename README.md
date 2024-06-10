@@ -49,7 +49,7 @@ The question six and class 2019-2 were used to genearate a boxplot with student 
 The statement of question 6 was ...
 
 The funtionalite number 1 is from the tuple bellow with an array of 36 student's grade.
-```bash
+```
 (	
   Question = 6,
   Semester = '2019-2',
