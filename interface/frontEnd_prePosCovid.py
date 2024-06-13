@@ -6,10 +6,11 @@ import pandas as pd
 def showBoxplotComparationPrePosPandemic():
 	data = pd.read_csv('doc/file/csvToCompareStudentPerformance.csv')
 	# create grouped boxplot  
-	sns.boxplot (	x = data['Question'], 
-								y = data['Grade'], 
-								hue = data['Semester']
-							)
+	sns.boxplot (	
+		x = data['Question'], 
+		y = data['Grade'], 
+		hue = data['Semester']
+	)
 	plt.show()
 
 def questionSemesterBoxPlot(question, semester):
