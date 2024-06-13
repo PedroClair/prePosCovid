@@ -37,8 +37,8 @@ When the application is executed, a menu appears with the following options:
 
 ```bash
 ---------------------Functionalities--------------------------------
-1. Example boxplot question and class: (question=6, class='2019-2')
-2. Example boxplot question in all classes: (question=6)
+1. Example boxplot question and class: (question=11, class='2019-2')
+2. Example boxplot question in all classes: (question=11)
 3. Figure 2: Common questions analyzed during the semesters in 2019 (prepandemic) and 2022-1 (post-pandemic)
 0. Exit
 ---------------------Student Performance---------------------
@@ -46,25 +46,25 @@ When the application is executed, a menu appears with the following options:
 
 The question six and class 2019-2 were used to genearate a boxplot with student performance. 
 
-The statement of question 6 was ...
+The statement of question 11 was ...
 
 Functionality number 1 is from the tuple below with an array of 36 student's grades.
 ```
 (	
-  Question = 6,
+  Question = 11,
   Semester = '2019-2',
-  grades = [0.33, 0.5, 0.33, 0.17, 0.5, 0.67, 0.667, 0.67, 0.5, 0.33, 0.67, 0.33, 0.67, 0.83, 0.33, 0.5, 0.33, 0.33, 0.33, 0.33, 0.83, 0.83, 0.5, 0.5, 0.33, 0.5, 0.92, 0.17, 0.83, 0.5, 0.17, 0.83, 0.33, 0.92, 0.33, 0.83]
+  grades = [1.0, 1.0, 1.0, 0.8, 1.0, 0.8, 0.8, 1.0, 0.8, 0.9, 0.9, 0.7, 0.9, 1.0, 0.9, 1.0, 0.8, 0.8, 0.9, 0.7, 0.4, 0.8, 0.8, 0.7, 0.9, 1.0, 1.0, 1.0, 0.7, 0.8, 0.8, 0.9, 0.4, 1.0, 0.9, 0.8]
 );
 ```
 And the boxplot result was:
 
 And the boxplot result was:
 
-![Example boxplot question and class](doc/figure/boxPlotQ6C2019-2.png)
+![Example boxplot question and class](doc/figure/QuestionExampleLongTerm11.png)
 
 Functionality 2 clearly defines students' performance in all semesters because the question was applied over time. The Figure below shows the result.
 
-![Example boxplot question in all classes](doc/figure/boxPlotQ6AllSemesters.png)
+![Example boxplot question in all classes](doc/figure/BoxPlotQ11-2019-2.png)
 
 Functionality 3 compares common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
 
