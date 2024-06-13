@@ -58,8 +58,6 @@ Functionality number 1 is from the tuple below with an array of 36 student's gra
 ```
 And the boxplot result was:
 
-And the boxplot result was:
-
 ![Example boxplot question and class](doc/figure/QuestionExampleLongTerm11.png)
 
 Functionality 2 clearly defines students' performance in all semesters because the question was applied over time. The Figure below shows the result.
