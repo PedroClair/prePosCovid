@@ -70,11 +70,11 @@ Functionality number 1 is from the tuple below with an array of 36 student's gra
 ```
 And the boxplot result was:
 
-![Example boxplot question and class](doc/figure/QuestionExampleLongTerm11.png)
+![Example boxplot question in all classes](doc/figure/BoxPlotQ11-2019-2.png)
 
 Functionality 2 clearly defines students' performance in all semesters because the question was applied over time. The Figure below shows the result.
 
-![Example boxplot question in all classes](doc/figure/BoxPlotQ11-2019-2.png)
+![Example boxplot question and class](doc/figure/QuestionExampleLongTerm11.png)
 
 Functionality 3 compares common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
 
