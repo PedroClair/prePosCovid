@@ -46,7 +46,19 @@ When the application is executed, a menu appears with the following options:
 
 The question six and class 2019-2 were used to genearate a boxplot with student performance. 
 
-The statement of question 11 was ...
+The statement of question 11 was:
+
+- For the following practices, identify the agile method with the best fit. Use the following legend: (X) for Extreme Programming, (S) for Scrum or (B) for Both (3 pts)
+  - [ ] Test-driven development
+  - [ ] Refactoring
+  - [ ] Pair programming
+  - [ ] Customer involvement
+  - [ ] Collective code ownership
+  - [ ] Daily 15-minute meetings
+  - [ ] Sustainable pace without overtime
+  - [ ] Short interactions and frequent deliveries
+  - [ ] 8-hour sprint planning meeting
+
 
 Functionality number 1 is from the tuple below with an array of 36 student's grades.
 ```
