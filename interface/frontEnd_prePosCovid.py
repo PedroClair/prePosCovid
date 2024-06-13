@@ -25,6 +25,3 @@ def questionSemester(question):
 	plt.title(f"Question: {question} along semesters")
 	plt.ylabel('Grades')
 	plt.show()
-
-def generalComparation():
-	BE.generalComparation()
