@@ -29,7 +29,7 @@ def test_main():
 		else:
 			print("Invalid choice. Please try again")
 
-def Wei2024_menu():
+def main_menu():
 	print("\n---------------------Welcome to the app--------------------------------")
 	print("1. Example boxplot question and class: (question=11, class='2019-2')")
 	print("2. Example boxplot question in all classes: (question=11)")
@@ -39,9 +39,9 @@ def Wei2024_menu():
 	print("0. Exit")
 	print("---------------------Student Performance---------------------\n")
 
-def Wei2024_main():
+def main():
 	while True:
-		Wei2024_menu()
+		main_menu()
 		functionality = input("Enter your option: ")
 		if functionality == '1':
 			questionSemesterBoxPlot(11, "2019-2")
