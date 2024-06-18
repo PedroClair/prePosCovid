@@ -11,7 +11,7 @@ def findQuestion(question):
 	return result
 
 def firstSemester(question, semester):
-	grades2019 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = '{semester}';"
+	grades2019 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = {semester};"
 	DB.cursor.execute(grades2019)
 	resultGrades2019 = DB.cursor.fetchall()[0][0] #-> First tuple and first column
 	#print("Grades by question: ", question, resultGrades2019) #-> Show on BackEnd to verify function result
@@ -81,3 +81,16 @@ def generateCsvToComparationPrePosPandemic():
 		csvwriter.writerow(fields)
 		# writing the data rows
 		csvwriter.writerows(rows)
+
+
+def generateCsvToComparationLongTermPosPandemic():
+	commonQuestions = [1,2,12,15,19,24,25,27,28,29,30,31,34,35]
+	rows = []
+	for question in commonQuestions:
+		questionBySemesters = findQuestion(question)
+		semesters = [x[0] for x in questionBySemesters]
+		grades1 = firstSemester(question, "2022-1")
+		gradesValues = [float(x) for x in grades1.split(',')]
+		for grade in gradesValues:
+			rows.append([question, '2022', grade])
+			print([question, '2022', grade])
