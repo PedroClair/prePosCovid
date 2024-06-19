@@ -1,28 +1,6 @@
 import numpy as np
 import database.consult as sql
-from database import connect as DB
 import csv
-
-def findQuestion(question):
-	sql = f"SELECT semesterFK FROM todo where id_questionFK = {question}"
-	DB.cursor.execute(sql)
-	result = DB.cursor.fetchall()
-	#print(question, result) #-> Show on BackEnd to verify function result
-	return result
-
-def firstSemester(question, semester):
-	grades2019 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = {semester};"
-	DB.cursor.execute(grades2019)
-	resultGrades2019 = DB.cursor.fetchall()[0][0] #-> First tuple and first column
-	#print("Grades by question: ", question, resultGrades2019) #-> Show on BackEnd to verify function result
-	return resultGrades2019
-
-def secondSemester(question, semester):
-	grades2022 = f"SELECT grades FROM todo where id_questionFK = {question} AND semesterFK = '{semester}';"
-	DB.cursor.execute(grades2022)
-	resultGrades2022 = DB.cursor.fetchall()[0][0] #-> First tuple and first column
-	#print("Grades by question: ", question, resultGrades2022)
-	return resultGrades2022
 
 def basicStatistic(id_questionFK, semesterFK):
 	results = sql.searchQuestionSemester(id_questionFK, semesterFK)
@@ -54,23 +32,31 @@ def questionAlongSemesters(id_questionFK):
 
 def generateCsvToComparationPrePosPandemic():
 	commonQuestions = [1,2,6,11,12,15,18,19,20,22,24,25,29,30,31,33,36]
+	question = commonQuestions[0]
 	rows = []
-	for question in commonQuestions:
-		questionBySemesters = findQuestion(question)
-		semesters = [x[0] for x in questionBySemesters]
-		grades1 = firstSemester(question, semesters[0])
-		gradesValues = [float(x) for x in grades1.split(',')]
-		print(question, semesters[0], gradesValues)
-		for grade in gradesValues:
-			rows.append([question, '2019', grade])
+	#for question in commonQuestions:
+	questionBySemesters = sql.findQuestion(question)
+	#print(questionBySemesters)
+	semesters = [x[0] for x in questionBySemesters]
 
-		grades2 = secondSemester(question, semesters[1])
-		gradesValues2 = [float(x) for x in grades2.split(',')]
-		print(question, semesters[1], gradesValues)
-		for grade2 in gradesValues2:
-			rows.append([question, '2022-1', grade2])
+	if('2022-1' in semesters):
+		for grade in [float(info) for info in sql.searchQuestionSemester(question, '2022-1')[0][0].split(',')]:
+			rows.append([question, '2022', grade])
+	print(rows)
+	
+	if('2022-2' in semesters):
+		for grade in [float(info) for info in sql.searchQuestionSemester(question, '2022-2')[0][0].split(',')]:
+			rows.append([question, '2022', grade])
 
-	filename = "csvToCompareStudentPerformance.csv"
+	if('2023-1' in semesters):
+		for grade in [float(info) for info in sql.searchQuestionSemester(question, '2023-1')[0][0].split(',')]:
+			rows.append([question, '2023', grade])
+
+	if('2023-2' in semesters):
+		for grade in [float(info) for info in sql.searchQuestionSemester(question, '2023-1')[0][0].split(',')]:
+			rows.append([question, '2023', grade])
+
+	filename = "csvToCompareLongTermStudentPerformance.csv"
 
 	fields = ['Question', 'Semester', 'Grade']
 	print(rows)
@@ -83,14 +69,33 @@ def generateCsvToComparationPrePosPandemic():
 		csvwriter.writerows(rows)
 
 
-def generateCsvToComparationLongTermPosPandemic():
+def generateCsvToComparationPosPandemic():
 	commonQuestions = [1,2,12,15,19,24,25,27,28,29,30,31,34,35]
 	rows = []
-	for question in commonQuestions:
-		questionBySemesters = findQuestion(question)
+	
+	for question in commonQuestions:#question = commonQuestions[0]
+		questionBySemesters = sql.findQuestion(question)
 		semesters = [x[0] for x in questionBySemesters]
-		grades1 = firstSemester(question, "2022-1")
-		gradesValues = [float(x) for x in grades1.split(',')]
-		for grade in gradesValues:
-			rows.append([question, '2022', grade])
-			print([question, '2022', grade])
+		if('2022-1' in semesters):
+			for grade in [float(info) for info in sql.searchQuestionSemester(question, '2022-1')[0][0].split(',')]:
+				rows.append([question, '2022', grade])
+		
+		if('2022-2' in semesters):
+			for grade in [float(info) for info in sql.searchQuestionSemester(question, '2022-2')[0][0].split(',')]:
+				rows.append([question, '2022', grade])
+
+		if('2023-1' in semesters):
+			for grade in [float(info) for info in sql.searchQuestionSemester(question, '2023-1')[0][0].split(',')]:
+				rows.append([question, '2023', grade])
+
+		if('2023-2' in semesters):
+			for grade in [float(info) for info in sql.searchQuestionSemester(question, '2023-2')[0][0].split(',')]:
+				rows.append([question, '2023', grade])
+
+		filename = "csvToComparePosPandemicPerform.csv"
+		fields = ['Question', 'Semester', 'Grade']
+		print(rows)
+		with open(filename, 'w') as csvfile:
+			csvwriter = csv.writer(csvfile)
+			csvwriter.writerow(fields)
+			csvwriter.writerows(rows)

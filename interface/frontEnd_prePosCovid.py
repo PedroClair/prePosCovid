@@ -56,7 +56,17 @@ def main():
 			print("Invalid choice. Please try again")
 
 def showBoxplotComparationPrePosPandemic():
-	data = pd.read_csv('doc/file/csvToCompareStudentPerformance.csv')
+	data = pd.read_csv('doc/file/csvToComparePrePosPandemicPerformance.csv')
+	# create grouped boxplot  
+	sns.boxplot (	
+		x = data['Question'], 
+		y = data['Grade'], 
+		hue = data['Semester']
+	)
+	plt.show()
+
+def showBoxplotComparationPosPandemic():
+	data = pd.read_csv('doc/file/csvToComparePosPandemicPerform.csv')
 	# create grouped boxplot  
 	sns.boxplot (	
 		x = data['Question'], 

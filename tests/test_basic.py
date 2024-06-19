@@ -1,12 +1,13 @@
 from service import backEnd_prePosCovid as BE
 from interface import frontEnd_prePosCovid as FE
-from database import consult as DB
+from database import consult as sql
 
 def testInterface():
-    pass
+    FE.showBoxplotComparationPosPandemic()
 
 def testService():
-    BE.generateCsvToComparationLongTermPosPandemic()
+    #BE.generateCsvToComparationPrePosPandemic()
+    BE.generateCsvToComparationPosPandemic()
 
 def testDatabase():
-    print(DB.searchQuestionSemester(1, '2022-1'))
+    sql.searchQuestionSemester(1, '2022-1')
