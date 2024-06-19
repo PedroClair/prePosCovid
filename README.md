@@ -86,4 +86,4 @@ The Functionality 4 compares common questions pos pandemic.
 
 Finally, the functionality 5 represents the general results
 
-![Comparison boxplot question all years]()
+![Comparison boxplot question all years](doc/figure/YearsComparationResult.png)
