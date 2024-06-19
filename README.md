@@ -59,6 +59,7 @@ The statement of question 11 was:
   - [ ] Short interactions and frequent deliveries
   - [ ] 8-hour sprint planning meeting
 
+- The resolutions of the questions are based on the materials provided by the course instructor. If necessary, the students can confer the answer and ask for a review.
 
 Functionality number 1 is from the tuple below with an array of 36 student's grades.
 ```
