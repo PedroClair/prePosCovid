@@ -1,4 +1,4 @@
-import service.backEnd_prePosCovid as BE
+import service.backEnd as BE
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -52,6 +52,8 @@ def main():
 			showBoxplotComparationPrePosPandemic()
 		elif functionality == '4':
 			showBoxplotComparationPosPandemic()
+		elif functionality == '5':
+			generalResult()
 		elif functionality == '0':
 			print("Exiting application ... ")
 			break
@@ -59,7 +61,7 @@ def main():
 			print("Invalid choice. Please try again")
 
 def showBoxplotComparationPrePosPandemic():
-	data = pd.read_csv('doc/file/csvToComparePrePosPandemicPerformance.csv')
+	data = pd.read_csv('doc/file/csvToComparePrePosPandemicPerform.csv')
 	# create grouped boxplot  
 	sns.boxplot (	
 		x = data['Question'], 
@@ -93,35 +95,7 @@ def questionSemester(question):
 	plt.show()
 
 def generalResult():
-	#allQuestions = list(range(1,37))
-	grades2019 = np.array([])
-	grades2022 = np.array([])
-	grades2023 = np.array([])
-
-
-	for question in np.arange(1, 37):
-		list_of_grades, list_of_semester = BE.questionAlongSemesters(question)
-		print(list_of_semester)
-		if '2019-1' in list_of_semester:
-			grades2019 = np.append(grades2019, list_of_grades[list_of_semester.index('2019-1')])
-
-		if '2019-2' in list_of_semester:
-			grades2019 = np.append(grades2019, list_of_grades[list_of_semester.index('2019-2')])
-		
-		if '2022-1' in list_of_semester:
-			grades2022 = np.append(grades2022, list_of_grades[list_of_semester.index('2022-1')])
-
-		if '2022-2' in list_of_semester:
-			grades2022 = np.append(grades2022, list_of_grades[list_of_semester.index('2022-2')])
-
-		if '2023-1' in list_of_semester:
-			grades2023 = np.append(grades2023, list_of_grades[list_of_semester.index('2023-1')])
-
-		if '2023-2' in list_of_semester:
-			grades2022 = np.append(grades2023, list_of_grades[list_of_semester.index('2023-2')])
-	
-	list_of_grades = [grades2019, grades2022, grades2023]
-
+	list_of_grades = BE.endPointGeneralResult()
 	plt.boxplot(list_of_grades, labels=['2019', '2022', '2023'])
 	plt.title(f"Year comparison")
 	plt.ylabel('Grades')

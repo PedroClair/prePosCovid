@@ -1,5 +1,5 @@
-from service import backEnd_prePosCovid as BE
-from interface import frontEnd_prePosCovid as FE
+from service import backEnd as BE
+from interface import frontEnd as FE
 from database import consult as sql
 
 def testInterface():

@@ -99,3 +99,32 @@ def generateCsvToComparationPosPandemic():
 			csvwriter = csv.writer(csvfile)
 			csvwriter.writerow(fields)
 			csvwriter.writerows(rows)
+
+def endPointGeneralResult():
+	grades2019 = np.array([])
+	grades2022 = np.array([])
+	grades2023 = np.array([])
+
+
+	for question in np.arange(1, 37):
+		list_of_grades, list_of_semester = questionAlongSemesters(question)
+		print(list_of_semester)
+		if '2019-1' in list_of_semester:
+			grades2019 = np.append(grades2019, list_of_grades[list_of_semester.index('2019-1')])
+
+		if '2019-2' in list_of_semester:
+			grades2019 = np.append(grades2019, list_of_grades[list_of_semester.index('2019-2')])
+		
+		if '2022-1' in list_of_semester:
+			grades2022 = np.append(grades2022, list_of_grades[list_of_semester.index('2022-1')])
+
+		if '2022-2' in list_of_semester:
+			grades2022 = np.append(grades2022, list_of_grades[list_of_semester.index('2022-2')])
+
+		if '2023-1' in list_of_semester:
+			grades2023 = np.append(grades2023, list_of_grades[list_of_semester.index('2023-1')])
+
+		if '2023-2' in list_of_semester:
+			grades2022 = np.append(grades2023, list_of_grades[list_of_semester.index('2023-2')])
+	
+	return [grades2019, grades2022, grades2023]
