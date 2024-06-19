@@ -3,7 +3,8 @@ from interface import frontEnd_prePosCovid as FE
 from database import consult as sql
 
 def testInterface():
-    FE.showBoxplotComparationPosPandemic()
+    #FE.showBoxplotComparationPosPandemic()
+    FE.generalResult()
 
 def testService():
     #BE.generateCsvToComparationPrePosPandemic()
