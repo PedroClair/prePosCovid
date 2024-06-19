@@ -33,8 +33,8 @@ def main_menu():
 	print("\n---------------------Welcome to the app--------------------------------")
 	print("1. Example boxplot question and class: (question=11, class='2019-2')")
 	print("2. Example boxplot question in all classes: (question=11)")
-	print("3. Figure 2: Common questions analyzed during the semesters in 2019 (pre-pandemic) and 2022-1 (post-pandemic). The exam questions Q6, Q18, Q24-Q25, Q29, Q30, Q33, and Q36 are open-ended questions.")
-	print("4. Figure 3: Two years after COVID-19 pandemic. The exam questions Q24, Q25, Q27-Q30, Q34, and Q35 are open-ended questions.")
+	print("3. Figure 2: Common questions analyzed during the semesters in 2019 (pre-pandemic) and 2022-1 (post-pandemic).")
+	print("4. Figure 3: Two years after COVID-19 pandemic.")
 	print("5. Figure 4. Year comparison")
 	print("0. Exit")
 	print("---------------------Student Performance---------------------\n")
@@ -49,6 +49,8 @@ def main():
 			questionSemester(11)
 		elif functionality == '3':
 			showBoxplotComparationPrePosPandemic()
+		elif functionality == '4':
+			showBoxplotComparationPosPandemic()
 		elif functionality == '0':
 			print("Exiting application ... ")
 			break
