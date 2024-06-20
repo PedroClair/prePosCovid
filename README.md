@@ -79,11 +79,11 @@ Functionality 2 clearly defines students' performance in all semesters because t
 
 Functionality 3 compares common questions applied in 2019 (pre-pandemic) and 2022-1 (post-pandemic).
 
-![Comparison boxplot question pre and pos pandemic](doc/figure/questionComparation2019_2022-1.png)
+![Comparison boxplot question pre and pos pandemic](doc/figure/BoxPlotComparisonPrePosCovidGrayScale.png)
 
 The Functionality 4 compares common questions pos pandemic.
 
-![Comparison boxplot question two years after pandemic](doc/figure/questionComparation2022_2023.png)
+![Comparison boxplot question two years after pandemic](doc/figure/BoxPlotComparisonPosCovidGrayScale.png)
 
 Finally, the functionality 5 represents the general results
 
