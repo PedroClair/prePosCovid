@@ -62,21 +62,31 @@ def main():
 
 def showBoxplotComparationPrePosPandemic():
 	data = pd.read_csv('doc/file/csvToComparePrePosPandemicPerform.csv')
+	
+	# Create a custom palette
+	custom_palette = {'2019': "white", '2022-1': "gray"}
+
 	# create grouped boxplot  
 	sns.boxplot (	
 		x = data['Question'], 
 		y = data['Grade'], 
-		hue = data['Semester']
+		hue = data['Semester'],
+		palette=custom_palette
 	)
 	plt.show()
 
 def showBoxplotComparationPosPandemic():
 	data = pd.read_csv('doc/file/csvToComparePosPandemicPerform.csv')
+
+	# Create a custom palette
+	custom_palette = {2022: "white", 2023: "gray"}
+
 	# create grouped boxplot  
 	sns.boxplot (	
 		x = data['Question'], 
 		y = data['Grade'], 
-		hue = data['Semester']
+		hue = data['Semester'],
+		palette=custom_palette
 	)
 	plt.show()
 
